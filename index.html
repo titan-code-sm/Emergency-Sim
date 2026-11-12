@@ -285,6 +285,41 @@ button{font:inherit;color:inherit}
 .team-l li.cpr{border-color:#a9d6bb;background:var(--ok-soft)} .team-l li.cpr i{background:var(--ok)} .team-l li.cpr .tw{color:var(--ok)}
 .team-l li.tired{border-color:#e7b3ba;background:var(--crit-soft)} .team-l li.tired i{background:var(--crit);width:100%!important} .team-l li.tired .tw{color:var(--crit)}
 .team-l li.drv{opacity:.65}
+.team-l li{cursor:pointer}
+.team-l li:hover{border-color:var(--accent)}
+.team-l li.sel{box-shadow:inset 0 0 0 2px var(--accent);border-color:var(--accent)}
+.team-l li:focus-visible{outline:2px solid var(--accent);outline-offset:1px}
+.team-h{display:flex;align-items:center;justify-content:space-between;gap:8px;font-size:12.5px;color:var(--muted);margin-bottom:5px;min-height:24px}
+.team-h b{color:var(--accent)}
+.team-auto{font:inherit;font-size:12px;border:1px solid var(--line);background:var(--panel);border-radius:999px;padding:2px 10px;cursor:pointer;color:var(--fg)}
+.mob-team .team-h{display:none}
+.ctx-ops{display:flex;flex-wrap:wrap;gap:4px;padding:6px 8px;border-bottom:1px solid var(--line);font-size:12px;color:var(--muted);align-items:center}
+.ctx-ops button{font:inherit;font-size:12px;border:1px solid var(--line);background:var(--panel);border-radius:999px;padding:3px 9px;cursor:pointer;color:var(--fg)}
+.ctx-ops button[aria-pressed="true"]{background:var(--accent);border-color:var(--accent);color:#fff}
+.ctx-ops button:disabled{opacity:.45;cursor:default}
+/* ZAINO */
+.bagw{position:fixed;inset:0;z-index:62;background:rgba(8,12,18,.72);display:grid;place-items:center;padding:12px;overflow:auto}
+.bag{width:min(1180px,100%);background:var(--panel);border-radius:14px;padding:14px;display:grid;gap:12px;box-shadow:0 30px 80px rgba(0,0,0,.45)}
+.bag-top{display:flex;align-items:center;gap:10px}.bag-top h2{margin:0;font-size:18px;font-weight:600}.bag-top .muted{font-size:13px;flex:1}
+.bag-top .x{width:38px;height:38px;border-radius:50%;border:1px solid var(--line);background:var(--panel);font-size:17px;cursor:pointer;color:var(--fg)}
+.bag-body{display:grid;grid-template-columns:minmax(0,1.25fr) minmax(0,1fr);gap:16px;align-items:start}
+.bag-img{position:relative;aspect-ratio:1100/920;background:#2a2f36;border-radius:10px;overflow:hidden}
+.bag-img img{position:absolute;inset:0;width:100%;height:100%;user-select:none}
+.pz{position:absolute;border:2px solid transparent;border-radius:8px;background:transparent;cursor:pointer;padding:0}
+.pz span{position:absolute;left:4px;top:4px;background:rgba(14,21,31,.82);color:#fff;font-size:11.5px;font-weight:600;padding:2px 7px;border-radius:999px;white-space:nowrap;pointer-events:none}
+.pz:hover,.pz[aria-pressed="true"]{border-color:#fff;box-shadow:0 0 0 3px rgba(29,95,174,.6);background:rgba(255,255,255,.08)}
+.pz:focus-visible{outline:3px solid #6aa5ec}
+.bag-set h3{margin:0 0 4px;font-size:17px}
+.bag-set .cont{margin:0 0 10px;color:var(--muted);font-size:13.5px}
+.bag-acts{display:grid;gap:6px}
+.bag-acts button{display:flex;justify-content:space-between;gap:10px;align-items:center;text-align:left;font:inherit;font-size:14px;border:1px solid var(--line);background:var(--panel);border-radius:8px;padding:9px 11px;cursor:pointer;color:var(--fg)}
+.bag-acts button:hover:not(:disabled){border-color:var(--accent);background:var(--accent-soft)}
+.bag-acts button small{font-family:var(--f-mono);font-size:11.5px;color:var(--muted);text-align:right}
+.bag-acts button:disabled{opacity:.55;cursor:default}
+.bag-acts button.run{background:var(--accent-soft)}
+@media (max-width:760px){.bag-body{grid-template-columns:1fr}.bagw{padding:0;place-items:stretch}.bag{border-radius:0;min-height:100%;align-content:start}}
+/* ETICHETTE OPERATORI */
+.tg{cursor:pointer}
 .team-i{display:flex;flex-wrap:wrap;gap:4px 14px;margin-top:7px;font-size:12.5px;color:var(--muted)}
 .team-i b{color:var(--fg);font-family:var(--f-mono);font-weight:600}
 .team-i .warn{color:var(--warn)} .team-i .bad{color:var(--crit)} .team-i .bad b{color:var(--crit)}
@@ -385,7 +420,7 @@ button{font:inherit;color:inherit}
   .dfstage>.df-cables{position:static;flex-direction:column;align-items:stretch}
 }
 /* MENU CONTESTUALE SUL PAZIENTE */
-.ctx{position:fixed;z-index:58;background:var(--panel);border:1px solid var(--line);border-radius:10px;box-shadow:0 12px 34px rgba(14,22,34,.28);max-height:min(62vh,460px);display:grid;grid-template-rows:auto minmax(0,1fr);overflow:hidden}
+.ctx{position:fixed;z-index:58;background:var(--panel);border:1px solid var(--line);border-radius:10px;box-shadow:0 12px 34px rgba(14,22,34,.28);max-height:min(66vh,500px);display:grid;grid-template-rows:auto auto minmax(0,1fr);overflow:hidden}
 .ctx-h{display:flex;align-items:center;justify-content:space-between;gap:8px;padding:8px 8px 8px 12px;border-bottom:1px solid var(--line);background:var(--panel2)}
 .ctx-h b{font-family:var(--f-cond);font-size:13px;letter-spacing:.06em;text-transform:uppercase;color:var(--accent)}
 .ctx-x{border:0;background:none;font-size:16px;cursor:pointer;color:var(--muted);padding:2px 6px}
@@ -826,6 +861,15 @@ html.mobon:not(.mobport) .mob-dock svg{width:18px;height:18px}
 </div>
 <div class="modal" id="modal" hidden></div>
 <div class="ctx" id="ctx" hidden role="menu"></div>
+<div class="bagw" id="bagw" hidden>
+  <div class="bag" role="dialog" aria-modal="true" aria-label="Zaino di emergenza">
+    <div class="bag-top"><h2>Zaino di emergenza</h2><span class="muted">Tocca una tasca per vedere il set e usarlo</span><button type="button" class="x" id="bagX" aria-label="Chiudi">✕</button></div>
+    <div class="bag-body">
+      <div class="bag-img" id="bagImg"><img src="assets/kit/zaino_aperto.webp" alt="Zaino aperto con le tasche colorate" draggable="false"></div>
+      <div class="bag-set" id="bagSet"></div>
+    </div>
+  </div>
+</div>
 
 </div>
 
@@ -867,6 +911,7 @@ const ACT={
   guedel:{c:"aw",l:"Cannula orofaringea",d:10},
   bvm:{c:"aw",l:"Pallone-maschera",d:10,once:true},
   igel:{c:"aw",l:"Presidio sovraglottico",d:30,once:true},
+  iot:{c:"aw",l:"Intubazione orotracheale",d:45,once:true,req:S=>S.f.igel?"Vie aeree già protette":null},
   aerosol:{c:"aw",l:"Salbutamolo 5 mg aerosol",d:15},
   pls:{c:"aw",l:"Posizione laterale di sicurezza",d:10,once:true},
   rcp:{c:"circ",l:S=>S.cpr?"Sospendi la RCP":"Avvia la RCP",d:2,instant:true},
@@ -2296,7 +2341,7 @@ function updateUI(full){
   const ma=$("#monAlarm");setNum(ma,alarm);ma.classList.toggle("blink",!!alarm);
   renderVehicles();
   const st=stNow(),pe=$("#ptStatus");setNum(pe,st.t);pe.className="status "+st.l;
-  renderTeam();renderInstr();if(DF.open)dfUpdate();if(MOB)mobUi();if(!$("#ctx").hidden)refreshCtx();
+  renderTeam();renderInstr();if(DF.open)dfUpdate();if(!$("#bagw").hidden)renderBag();if(MOB)mobUi();if(!$("#ctx").hidden)refreshCtx();
   renderDevices();
   updateButtons();
 }
@@ -2372,7 +2417,7 @@ function startSim(){
     if(v.spo2>0)v.spo2=clamp(v.spo2+Math.round((Math.random()-.5)*4),50,100);if(S.p&&S.p.vfAt!=null)S.p.vfAt+=Math.round((Math.random()-.5)*120)}
   S.v0=S.v;mergeVitals();S.team=makeTeam();S.startReal=new Date();
   S.kit={};const hospK=SC.setting==="Ospedale";for(const k in KIT)S.kit[k]=hospK||BKIT.has(k);S.kitStart=Object.keys(KIT).filter(k=>S.kit[k]);
-  S.dev={on:true,en:200,chg:null,ready:false,sync:false,pace:false,rate:70,ma:0,lead:"II"};MBUF.e=[];MBUF.p=[];closeDefib();
+  S.sel=null;S.dev={on:true,en:200,chg:null,ready:false,sync:false,pace:false,rate:70,ma:0,lead:"II"};MBUF.e=[];MBUF.p=[];closeDefib();
   $("#btnHint").hidden=MODE==="exam";$("#btnNibpAuto").textContent="PA auto";$("#btnNibpAuto").setAttribute("aria-pressed","false");closeModal();
   if(!$("#insPanel").hidden){$("#insBody").innerHTML=instrHtml(false)}
   $("#sbTitle").textContent=SC.title;$("#sbPlace").textContent=SC.place;
@@ -2393,7 +2438,7 @@ function startSim(){
 }
 let endArm=false,endTimer=null;
 function endScenario(e){
-  if(S.end)return;closeDefib();S.end=e;for(const t of S.tasks.slice())cancelTask(t);stopCpr();closeModal();
+  if(S.end)return;closeDefib();closeBag();S.end=e;for(const t of S.tasks.slice())cancelTask(t);stopCpr();closeModal();
   S.hist.push({t:S.t,hr:S.v.hr,sbp:S.v.sbp,spo2:S.v.spo2});
   addLog(e.m,e.res==="ok"?"good":e.res==="fail"?"bad":"sys");
   updateUI(true);
@@ -2475,7 +2520,9 @@ function bmPick(e){const z=e.target.closest&&e.target.closest("[data-z]");if(!z|
   startAction(id);$("#bmCap").textContent="Esamino: "+ZL[z.dataset.z]+"…"}
 $("#bmSvg").addEventListener("click",bmPick);
 $("#bmSvg").addEventListener("keydown",e=>{if(e.key==="Enter"||e.key===" "){e.preventDefault();bmPick(e)}});
-$("#tdSvg").addEventListener("click",e=>{if(!S||S.end)return;if(e.target.closest("#kMon")){openDefib();return}const g=$s("tdRot")||$s("tdSvg"),m=g.getScreenCTM();if(!m)return;
+$("#tdSvg").addEventListener("click",e=>{if(!S||S.end)return;if(e.target.closest("#kMon")){openDefib();return}
+  if(e.target.closest("#kZaino,#k_zaino")){openBag();return}
+  const tg=e.target.closest("[data-tag]");if(tg){const o=opOfSlot(tg.dataset.tag);if(o)setSel(S.sel===o.i?null:o.i);return}const g=$s("tdRot")||$s("tdSvg"),m=g.getScreenCTM();if(!m)return;
   const pt=$s("tdSvg").createSVGPoint();pt.x=e.clientX;pt.y=e.clientY;const q=pt.matrixTransform(m.inverse());openCtx(PH?phRegion(q.x,q.y):tdRegion(q.x,q.y),e.clientX,e.clientY)});
 $("#ptSvg").addEventListener("click",e=>{if(!S||S.end||!GEO)return;const sv=$("#ptSvg"),m=sv.getScreenCTM();if(!m)return;
   const pt=sv.createSVGPoint();pt.x=e.clientX;pt.y=e.clientY;const q=pt.matrixTransform(m.inverse()),dx=q.x-GEO.px;
@@ -2495,7 +2542,7 @@ $("#btnSound").addEventListener("click",()=>{
 /* ---------- SQUADRA, RUOLI, TRASPORTO, ISTRUTTORE ---------- */
 const ROLES={soc:{n:"Soccorritore",lv:1,crew:"Mezzo di soccorso di base (MSB)"},inf:{n:"Infermiere",lv:2,crew:"Mezzo con infermiere (MSI)"},med:{n:"Medico",lv:3,crew:"Mezzo con medico (MSA)"}};
 const LVN={1:"un soccorritore",2:"un infermiere",3:"il medico"},LVS={1:"soccorritore",2:"infermiere",3:"medico"};
-const LVMAP={igel:2,aerosol:2,ev:2,io:2,fluidi:2,adrIM:2,adrIV:2,amio300:2,amio150:2,glu10:2,glucagone:2,clorf:2,idroc:2,asa:2,etco2:2,ntg:3,morfina:3,txa:3};
+const LVMAP={iot:3,igel:2,aerosol:2,ev:2,io:2,fluidi:2,adrIM:2,adrIV:2,amio300:2,amio150:2,glu10:2,glucagone:2,clorf:2,idroc:2,asa:2,etco2:2,ntg:3,morfina:3,txa:3};
 let ROLE="inf",MODE="train";
 const DEST={ps:{n:"Pronto Soccorso · ospedale di zona",eta:420},hub:{n:"Centro hub con emodinamica",eta:900},trauma:{n:"Trauma center di riferimento",eta:1080}};
 const DEST_OK={anafilassi:["ps"],fv:["hub"],stemi:["hub"],trauma:["trauma"]};
@@ -2510,7 +2557,8 @@ function makeTeam(){
 }
 function addMember(n,lv){const o={n,lv,i:S.team.length,task:null,cpr:false,drive:false,rk:null,reinf:true};S.team.push(o);return o}
 function freeOps(lv){return S.team.filter(o=>!o.task&&!o.cpr&&!o.drive&&o.lv>=lv)}
-function pickOp(lv){const f=freeOps(lv);if(!f.length)return null;f.sort((a,b)=>(a.lv-b.lv)||((a.me?1:0)-(b.me?1:0)));return f[0]}
+function opFree(o){return o&&!o.task&&!o.cpr&&!o.drive}
+function pickOp(lv){if(S&&S.sel!=null){const o=S.team[S.sel];return opFree(o)&&o.lv>=lv?o:null}const f=freeOps(lv);if(!f.length)return null;f.sort((a,b)=>(a.lv-b.lv)||((a.me?1:0)-(b.me?1:0)));return f[0]}
 function taskOf(id){return S.tasks.find(t=>t.id===id)||null}
 function startCpr(o){S.cprRem=false;S.cprLongFlag=false;S.cpr=true;S.cprOp=o.i;o.cpr=true;S.cprSince=S.t;if(S.cycle0==null)S.cycle0=S.t}
 function stopCpr(){if(S&&S.cprOp!=null&&S.team[S.cprOp])S.team[S.cprOp].cpr=false;if(S){S.cpr=false;S.cprOp=null}}
@@ -2778,18 +2826,19 @@ function blocked(id){
   else if(a.once&&S.done[id]!=null)return"Già eseguito";
   const lv=LVMAP[id]||1;
   if(!S.team.some(o=>o.lv>=lv))return"Serve "+LVN[lv];
-  {const nk=NEED[id];if(nk&&S.kit&&!S.kit[nk])return"Manca: "+KIT[nk].s}
+  {const nk=NEED[id];if(nk&&S.kit){const L=[].concat(nk);if(!L.some(k=>S.kit[k]))return"Manca: "+KIT[L[0]].s}}
   if(a.req){const r=a.req(S);if(r)return r}
   if(id==="shock"&&maxLv()===1&&!(S.lastAnal&&S.t-S.lastAnal.t<45&&S.lastAnal.sh))return"Il DAE non lo consiglia";
   if(id==="rcp"&&S.cpr)return null;
+  if(S.sel!=null){const o=S.team[S.sel];if(o&&o.lv<lv)return o.n+": serve "+LVS[lv];if(o&&!opFree(o))return o.n+" è occupato"}
   if(!pickOp(lv))return freeOps(1).length?LVS[lv]+" occupato":"Tutti occupati";
   return null;
 }
 function startAction(id){
   if(!S||!S.run||blocked(id))return;
   const a=ACT[id];
-  if(a.instant){complete(id,null);speak("A",sayFor(id));return}
-  const op=pickOp(LVMAP[id]||1);const t={id,start:S.t,end:S.t+a.d,op:op.i};op.task=t;S.tasks.push(t);
+  if(a.instant){complete(id,null);speak("A",sayFor(id));setSel(null);return}
+  const op=pickOp(LVMAP[id]||1);const t={id,start:S.t,end:S.t+a.d,op:op.i};op.task=t;S.tasks.push(t);setSel(null);
   speak(slotOf(id),sayFor(id));
   updateUI(true);
 }
@@ -2804,6 +2853,9 @@ function complete(id,task){
   if(S.done[id]==null)S.done[id]=S.t;
   (S.times[id]=S.times[id]||[]).push(S.t);
   const pre=Object.assign({},S.v);let r;
+  if(id==="iot"){if(!S.arrest&&S.v.gcs>8.5){r={m:"Paziente reattivo: l’intubazione senza sedazione non è possibile. Valuta le alternative.",k:"bad"};S.done.iot=undefined}
+    else{const h=S.sc.act&&S.sc.act.igel;r=h?h(S):baseDo("igel");S.f.igel=true;S.f.iot=true;S.done.igel=S.done.igel??S.t;r={m:"Intubazione orotracheale eseguita: tubo cuffiato in sede, capnografia confermata. "+(r.k==="bad"?"":"Ventilazione efficace."),k:r.k==="bad"?"bad":"good"}}}
+  else
   if(id==="asp"&&S.vom&&!S.vom.ok){S.vom.ok=true;r={m:"Aspirato il materiale gastrico dal cavo orale: vie aeree di nuovo libere.",k:"good"}}
   else if(S.fa&&(id==="shock"||id==="analizza")){r=baseDo(id);
     if(id==="shock"&&S.fa.r==="vf"){S.fa.shocks++;if(S.fa.cpr>=20||S.fa.shocks>=2){const pr=S.fa.prevR;S.fa=null;S.arrest=false;S.rhythm=pr==="stach"||pr==="sinus"?pr:"sinus";r={m:"Shock erogato. Ritmo organizzato con polso: ROSC.",k:"good"}}}}
@@ -2874,7 +2926,7 @@ function renderTeam(){
     if(o.drive){what="alla guida";cls="drv"}
     else if(o.cpr){const el=S.t-S.cprSince;what="compressioni · "+fmtT(el);cls=el>120?"tired":"cpr";pct=clamp(el/120,0,1)*100}
     else if(o.task){const t=o.task;what=labelOf(t.id)+" · "+Math.max(0,Math.ceil(t.end-S.t))+" s";cls="work";pct=clamp((S.t-t.start)/(t.end-t.start),0,1)*100}
-    return `<li class="${cls}"><span class="tn">${esc(o.n)}<small>${LVS[o.lv]}${o.reinf?" · supporto":""}</small></span><span class="tw">${esc(what)}</span><i style="width:${pct.toFixed(0)}%"></i></li>`}).join("");
+    return `<li class="${cls}${S.sel===o.i?" sel":""}" data-op="${o.i}" role="button" tabindex="0" aria-pressed="${S.sel===o.i}" title="Assegna la prossima manovra a ${esc(o.n)}"><span class="tn">${esc(o.n)}<small>${LVS[o.lv]}${o.reinf?" · supporto":""}</small></span><span class="tw">${esc(what)}</span><i style="width:${pct.toFixed(0)}%"></i></li>`}).join("");
   const info=[];
   if(S.phase==="trasporto")info.push(`<span>In viaggio verso <b>${esc(S.dest.n)}</b> · arrivo tra ${fmtT(S.eta-S.t)}</span>`);
   if(SC.setting!=="Ospedale"&&S.phase==="scena"&&S.kit&&S.kit.o2){const fl=o2Flow(),aut=fl?Math.floor(S.o2L/fl):null;
@@ -2882,7 +2934,7 @@ function renderTeam(){
   else if(S.phase==="trasporto")info.push("<span>O₂ dall’impianto del mezzo</span>");
   if(S.cpr)info.push(`<span class="${S.cprQ<.8?"bad":""}">Qualità delle compressioni <b>${Math.round(S.cprQ*100)}%</b></span>`);
   if(S.nibpAuto)info.push(`<span>PA automatica ogni ${S.nibpAuto/60} min</span>`);
-  const html=`<ul class="team-l">${rows}</ul>${info.length?`<div class="team-i">${info.join("")}</div>`:""}`;
+  const html=`<div class="team-h"><span>${S.sel!=null?`Prossima manovra: <b>${esc(S.team[S.sel].n)}</b>`:"Tocca un operatore per assegnargli la prossima manovra"}</span>${S.sel!=null?'<button type="button" class="team-auto" data-op="auto">Automatico</button>':""}</div><ul class="team-l">${rows}</ul>${info.length?`<div class="team-i">${info.join("")}</div>`:""}`;
   const el=$("#team");if(el.dataset.h!==html){el.innerHTML=html;el.dataset.h=html}
 }
 function bgAmb(){
@@ -2925,7 +2977,7 @@ const KIT={
 const NEED={ecg:"mon",spo2:"mon",nibp:"mon",pads:"mon",etco2:"mon",ecg12:"mon",ecgR:"mon",analizza:"mon",shock:"mon",
   gluco:"zaino",guedel:"zaino",bvm:"zaino",igel:"zaino",ev:"zaino",io:"zaino",fluidi:"zaino",adrIM:"zaino",adrIV:"zaino",amio300:"zaino",amio150:"zaino",
   glu10:"zaino",glucagone:"zaino",clorf:"zaino",idroc:"zaino",asa:"zaino",ntg:"zaino",morfina:"zaino",txa:"zaino",aerosol:"zaino",temp:"zaino",
-  o2:"o2",o2t:"o2",asp:"asp",collar:"trauma",scoop:"trauma",binder:"trauma",foil:"trauma",tq:"emo",press:"emo"};
+  o2:"o2",o2t:"o2",asp:"asp",collar:"trauma",scoop:"trauma",binder:"trauma",foil:["trauma","zaino"],tq:"emo",press:["emo","zaino"],iot:"zaino"};
 for(const k in KIT)ACT["get_"+k]={c:"com",l:"Prendi dal mezzo: "+KIT[k].s,d:60,req:S=>S.kit&&S.kit[k]?"Già sul posto":S.phase!=="scena"?"In viaggio":null};
 let BKIT=new Set(["mon","zaino","o2"]);
 function kitCap(){return ROLE==="med"?6:4}
@@ -2949,12 +3001,16 @@ const PHOTO={stemi:{w:620,h:346,
   arm:{pts:"178,346 397,346 334,212 306,132 238,134 222,212",cx:272,cy:176}}};
 let PH=null,TDW=620,TDH=250;
 const VAL_T=new Set(["A","B","C","D","E","sample","scena","gluco","temp","rassicura"]);
-function phKey(){const c=S.conn,t=id=>!!taskOf(id);
+/* foto alternative: "<stato>_b" = la manovra in corso la esegue la collega alla testa */
+function phKey(){const c=S.conn,P=PHOTO[SC.id];
+  const who=id=>{const x=taskOf(id);return x?(S.team[x.op]&&S.team[x.op].rk==="B"?"B":"A"):null};
+  const run=(k,ids)=>{for(const id of ids){const w=who(id);if(!w)continue;if(w==="B")return P.img[k+"_b"]?k+"_b":null;return k}return null};
   if(S.cpr&&S.arrest)return"cpr";if(c.pads)return"pads";if(S.f.o2||S.f.bvm)return"o2";
-  if(S.done.ev!=null||t("ev"))return"ev";if(S.done.ecg12!=null||t("ecg12"))return"ecg12";
-  if(c.ecg||c.spo2||t("ecg")||t("spo2"))return"ecg";
+  if(S.done.ev!=null)return"ev";{const r=run("ev",["ev"]);if(r)return r}
+  if(S.done.ecg12!=null)return"ecg12";{const r=run("ecg12",["ecg12"]);if(r)return r}
+  if(c.ecg||c.spo2)return"ecg";{const r=run("ecg",["ecg","spo2"]);if(r)return r}
   if(S.tasks.some(x=>VAL_T.has(x.id)||x.id.startsWith("ex_")))return"val";return"base"}
-function phFrameKind(){return PH&&PH.key?PHOTO[SC.id].frame[PH.key]:"n"}
+function phFrameKind(){return PH&&PH.fr?PH.fr:"n"}
 function buildPhotoTop(){
   const P=PHOTO[SC.id];PH={key:null,front:0,fr:null};TDW=P.w;TDH=P.h;const sv=$s("tdSvg");
   for(const u of Object.values(P.img)){const i=new Image();i.src=u}
@@ -2972,11 +3028,12 @@ function phFrame(){
   if(k!==PH.key){PH.key=k;const u=P.img[k];const nb=PH.front?$s("phA"):$s("phB"),ob=PH.front?$s("phB"):$s("phA");
     nb.setAttribute("href",u);nb.style.transition="opacity .6s ease";ob.style.transition="opacity .6s ease";
     requestAnimationFrame(()=>{nb.setAttribute("opacity","1");ob.setAttribute("opacity","0")});PH.front=1-PH.front;
-    const fr=P.frame[k];if(fr!==PH.fr){PH.fr=fr;buildKitLayer()}}
+    const fr=P.frame[k]||P.frame[k.replace(/_b$/,"")];if(fr!==PH.fr){PH.fr=fr;buildKitLayer()}}
   const arm=$s("phArm");
   if(k==="cpr"&&S.cpr&&S.run){const ph=(tW*110/60)%1,sc=1+.032*Math.max(0,Math.sin(2*PI*ph));
     arm.setAttribute("opacity","1");arm.setAttribute("transform",`translate(${P.arm.cx} ${P.arm.cy}) scale(${sc.toFixed(4)}) translate(${-P.arm.cx} ${-P.arm.cy})`)}
   else arm.setAttribute("opacity","0");
+  tagsFrame();
   const cy=S.arrest?.22:S.v.spo2<88?.12:0;$s("phTint").setAttribute("opacity",String(cy));
   const f=$s("tdFlash");if(f){const a=FX.shockT?Math.max(0,1-(performance.now()-FX.shockT)/350):0;f.setAttribute("opacity",(a*.8).toFixed(2))}
 }
@@ -3001,7 +3058,7 @@ function miniScr(){return `<rect width="100" height="80" fill="#04070c"/>
   <text id="kMonPA" x="3" y="75" font-family="IBM Plex Mono,monospace" font-size="8" fill="#e8eef5">PA ---/---</text>
   <circle id="kMonLed" cx="94" cy="72" r="3.5" fill="#ff9a3d" opacity="0"/>`}
 function kitImg(k,x,y,w){const [src,ar]=KIMG[k],h=w/ar;
-  if(k!=="mon")return `<g id="k_${k}"><image href="${src}" x="${(x-w/2).toFixed(1)}" y="${(y-h/2).toFixed(1)}" width="${w}" height="${h.toFixed(1)}" filter="url(#kShadow)"/></g>`;
+  if(k!=="mon")return `<g id="k_${k}"${k==="zaino"?' style="cursor:pointer"':""}><image href="${src}" x="${(x-w/2).toFixed(1)}" y="${(y-h/2).toFixed(1)}" width="${w}" height="${h.toFixed(1)}" filter="url(#kShadow)"/></g>`;
   const x0=x-w/2,y0=y-h/2,sx=w*.3571/100,sy=h*.5048/80;
   return `<g id="kMon" style="cursor:pointer"><image href="${src}" x="${x0.toFixed(1)}" y="${y0.toFixed(1)}" width="${w}" height="${h.toFixed(1)}" filter="url(#kShadow)"/>
     <g transform="matrix(${sx.toFixed(4)} 0 0 ${sy.toFixed(4)} ${(x0+w*.2907).toFixed(2)} ${(y0+h*.2838).toFixed(2)})">${miniScr()}</g></g>`}
@@ -3012,6 +3069,7 @@ function buildKitLayer(){
   let h=`<defs><filter id="kShadow" x="-20%" y="-20%" width="140%" height="150%"><feDropShadow dx="1.5" dy="2.5" stdDeviation="2.2" flood-opacity=".38"/></filter></defs>`;
   if(S.phase!=="trasporto"){
     for(const k of Object.keys(KIT)){if(!S.kit[k]||has.includes(k))continue;const [x,y,w]=pos[k];h+=kitImg(k,x,y,w)}
+    if(has.includes("zaino")&&S.kit.zaino)h+=`<rect id="kZaino" x="214" y="12" width="104" height="104" fill="transparent" style="cursor:pointer"/>`;
     if(has.includes("mon")&&S.kit.mon)h+=`<g id="kMon" style="cursor:pointer"><rect x="336" y="48" width="104" height="74" fill="transparent"/><g transform="matrix(${SCR_N.join(" ")})">${miniScr()}</g></g>`;
   }
   g.innerHTML=h;
@@ -3136,9 +3194,67 @@ $("#dfw").addEventListener("click",e=>{const b=e.target.closest("[data-df]");if(
 document.addEventListener("keydown",e=>{if(e.key==="Escape"&&DF.open){e.preventDefault();closeDefib()}});
 
 $("#btnDefib").addEventListener("click",openDefib);
+/* ---------- ZAINO APERTO ---------- */
+const BAG=[
+ {k:"vie",n:"Vie aeree e intubazione",r:[200,55,500,245],c:"Cannule di Guedel 2–5, laringoscopio con lame curve, tubi endotracheali 6,5–8,0 con mandrino, siringa da 10 ml, fissatubo, presidi sovraglottici 3–4–5, filtri HME.",a:["guedel","igel","iot","asp"]},
+ {k:"inf",n:"Infusione",r:[205,248,505,440],c:"Agocannule 14–22 G, laccio, disinfettante, cerotti di fissaggio, deflussori, rubinetti a tre vie, fisiologica 500 ml, kit intraosseo.",a:["ev","io","fluidi"]},
+ {k:"med",n:"Medicazione",r:[205,450,510,650],c:"Garze sterili, compresse, bende elastiche, cerotti, telini, forbici di Robin, ghiaccio istantaneo.",a:["press","ex_torace","E"]},
+ {k:"diag",n:"Diagnostica",r:[560,55,770,215],c:"Glucometro con strisce e lancette, termometro, fonendoscopio, sfigmomanometro manuale, saturimetro da dito.",a:["gluco","temp","B","C"]},
+ {k:"bende",n:"Bende e cerotti",r:[772,60,925,190],c:"Bende di garza, bende elastiche, cerotto in rotolo, cerotto in TNT.",a:["press"]},
+ {k:"farm",n:"Metallina farmaci",r:[565,215,780,360],c:"Adrenalina 1 mg, amiodarone 150 mg, acido acetilsalicilico, nitroglicerina spray, glucosio 33% e 10%, glucagone, clorfenamina, idrocortisone, morfina, acido tranexamico, salbutamolo.",a:["adrIM","adrIV","amio300","amio150","asa","ntg","glu10","glucagone","clorf","idroc","morfina","txa"]},
+ {k:"flac",n:"Flaconi e soluzioni",r:[795,190,945,292],c:"Soluzione fisiologica per lavaggi, disinfettante, gel lubrificante.",a:["fluidi"]},
+ {k:"o2",n:"Ossigenoterapia e aerosol",r:[565,365,770,650],c:"Maschera con reservoir, occhialini nasali, maschera Venturi, kit per aerosol, prolunghe.",a:["o2","o2t","aerosol"]},
+ {k:"vent",n:"Ventilazione",r:[805,300,955,635],c:"Pallone autoespandibile adulto con reservoir, maschere 3–4–5, valvola PEEP, linea per capnografia.",a:["bvm","guedel","etco2"]},
+ {k:"dpi",n:"Telo e protezione",r:[15,655,495,900],c:"Telo isotermico, guanti, mascherine FFP2, occhiali protettivi, sacchetto per rifiuti sanitari.",a:["foil"]}
+];
+let BAGK="farm";
+function openBag(k){if(!S||S.end)return;if(SC.setting!=="Ospedale"&&!S.kit.zaino){addLog("Lo zaino è ancora sul mezzo: mandalo a prendere.","bad");return}
+  closeCtx();BAGK=k||BAGK;const box=$("#bagImg");
+  box.querySelectorAll(".pz").forEach(x=>x.remove());
+  box.insertAdjacentHTML("beforeend",BAG.map(b=>{const [x1,y1,x2,y2]=b.r;return `<button type="button" class="pz" data-pz="${b.k}" style="left:${(x1/11).toFixed(2)}%;top:${(y1/9.2).toFixed(2)}%;width:${((x2-x1)/11).toFixed(2)}%;height:${((y2-y1)/9.2).toFixed(2)}%" aria-label="${esc(b.n)}"><span>${esc(b.n)}</span></button>`}).join(""));
+  $("#bagw").hidden=false;renderBag();$("#bagX").focus()}
+function closeBag(){$("#bagw").hidden=true}
+function opChips(){return `<div class="ctx-ops"><span>Chi la fa:</span><button type="button" data-op="auto" aria-pressed="${S.sel==null}">Automatico</button>`+S.team.map(o=>`<button type="button" data-op="${o.i}" aria-pressed="${S.sel===o.i}" ${opFree(o)?"":"disabled"} title="${opFree(o)?"Libero":"Occupato"}">${esc(o.n)}</button>`).join("")+`</div>`}
+function renderBag(){if($("#bagw").hidden)return;const b=BAG.find(x=>x.k===BAGK);
+  document.querySelectorAll("#bagImg .pz").forEach(x=>x.setAttribute("aria-pressed",String(x.dataset.pz===BAGK)));
+  const html=`<h3>${esc(b.n)}</h3><p class="cont">${esc(b.c)}</p>${opChips()}<div class="bag-acts" style="margin-top:8px">`+b.a.filter(id=>ACT[id]).map(id=>{const run=!!taskOf(id),why=blocked(id);
+    return `<button type="button" data-bag="${id}" ${why&&!run?"disabled":""} class="${run?"run":""}"><span>${esc(labelOf(id))}</span><small>${esc(ctxNote(id))}</small></button>`}).join("")+`</div>`;const el=$("#bagSet");if(el.dataset.h!==html){el.innerHTML=html;el.dataset.h=html}}
+document.addEventListener("click",e=>{
+  const pz=e.target.closest("[data-pz]");if(pz){BAGK=pz.dataset.pz;renderBag();return}
+  const ba=e.target.closest("[data-bag]");if(ba){startAction(ba.dataset.bag);renderBag();return}
+  if(e.target.id==="bagw"||e.target.closest("#bagX")){closeBag();return}
+  const op=e.target.closest("[data-op]");if(op&&S&&!S.end){const v=op.dataset.op;setSel(v==="auto"?null:(S.sel===+v?null:+v));return}
+});
+document.addEventListener("keydown",e=>{
+  if(e.key==="Escape"&&!$("#bagw").hidden){e.preventDefault();closeBag();return}
+  const li=e.target.closest&&e.target.closest(".team-l li[data-op]");if(li&&(e.key==="Enter"||e.key===" ")){e.preventDefault();li.click()}});
+function setSel(v){if(!S)return;S.sel=v;updateUI(true);if(!$("#ctx").hidden&&$("#ctx .ctx-ops"))$("#ctx .ctx-ops").outerHTML=opChips();renderBag()}
+
+/* ---------- ETICHETTE SUGLI OPERATORI IN FOTO ---------- */
+const TAGP={A:[452,322],B:[112,70]};
+function opOfSlot(k){return S.team.find(o=>o.rk===k)}
+function opStatus(o){if(!o)return["",0];if(o.cpr)return["Compressioni",clamp((S.t-S.cprSince)/120,0,1)];if(o.drive)return["Alla guida",0];
+  if(o.task){const t=o.task;return[labelOf(t.id),clamp((S.t-t.start)/(t.end-t.start),0,1)]}return["Libero",0]}
+function tagsFrame(){
+  const root=$s("tdRot");if(!root||!PH)return;let g=$s("phTags");
+  if(PH.fr!=="n"||S.phase==="trasporto"||S.end){if(g)g.remove();return}
+  if(!g){g=document.createElementNS("http://www.w3.org/2000/svg","g");g.id="phTags";
+    g.innerHTML=["A","B"].map(k=>`<g class="tg" data-tag="${k}"><g id="tgR_${k}"><rect x="-62" y="-15" width="124" height="30" rx="8" fill="rgba(14,21,31,.84)" id="tgBg_${k}"/>
+      <text id="tgN_${k}" x="-55" y="-3" font-family="IBM Plex Sans,sans-serif" font-size="9" font-weight="600" fill="#fff"></text>
+      <text id="tgT_${k}" x="-55" y="9" font-family="IBM Plex Sans,sans-serif" font-size="8" fill="#c9d4e2"></text>
+      <rect x="-62" y="12" width="124" height="3" rx="1.5" fill="rgba(255,255,255,.15)"/><rect id="tgP_${k}" x="-62" y="12" width="0" height="3" rx="1.5" fill="#6aa5ec"/></g></g>`).join("");
+    const fl=$s("tdFlash");if(fl&&fl.parentNode===root)root.insertBefore(g,fl);else root.appendChild(g)}
+  for(const k of ["A","B"]){const o=opOfSlot(k),el=g.querySelector(`[data-tag="${k}"]`);if(!o){el.setAttribute("display","none");continue}el.removeAttribute("display");
+    const [x,y]=MOB&&PORT&&k==="A"?[470,278]:TAGP[k];el.setAttribute("transform",`translate(${x} ${y})${MOB&&PORT?" rotate(-90)":""}`);
+    const [t,p]=opStatus(o),sel=S.sel===o.i;
+    $s("tgN_"+k).textContent=o.n+(sel?" · prossima manovra":"");let tt=t;if(tt.length>26)tt=tt.slice(0,25)+"…";$s("tgT_"+k).textContent=tt;
+    $s("tgP_"+k).setAttribute("width",(124*p).toFixed(1));$s("tgP_"+k).setAttribute("fill",o.cpr&&S.t-S.cprSince>120?"#f06a7a":"#6aa5ec");
+    $s("tgBg_"+k).setAttribute("stroke",sel?"#6aa5ec":"none");$s("tgBg_"+k).setAttribute("stroke-width","2")}
+}
+
 /* ---------- MENU SUL PAZIENTE ---------- */
 const REG={
-  testa:{t:"Testa e vie aeree",a:["A","D","o2","o2t","bombola","guedel","asp","bvm","igel","collar","pls","asa","ntg","zucchero","rassicura","ex_testa","ex_collo"]},
+  testa:{t:"Testa e vie aeree",a:["A","D","o2","o2t","bombola","guedel","asp","bvm","igel","iot","collar","pls","asa","ntg","zucchero","rassicura","ex_testa","ex_collo"]},
   torace:{t:"Torace",a:["B","E","rcp","cambio","pads","analizza","shock","ecg","ecg12","ecgR","etco2","aerosol","ex_torace","ex_dorso"]},
   bdx:{t:"Braccio destro",a:["C","nibp","spo2","gluco","ev","fluidi","adrIV","amio300","amio150","glu10","clorf","idroc","morfina","txa","ex_adx"]},
   bsx:{t:"Braccio sinistro",a:["C","nibp","spo2","gluco","ev","fluidi","adrIV","amio300","amio150","glu10","clorf","idroc","morfina","txa","ex_asx"]},
@@ -3150,20 +3266,20 @@ function tdRegion(x,y){if(x<135)return"testa";if(x>=380)return y>=128?"gdx":"gsx
 function ctxNote(id){const why=blocked(id);if(taskOf(id))return"in corso";if(why)return why==="Già eseguito"?"eseguito":why;return ACT[id].instant?"subito":ACT[id].d+" s"}
 function openCtx(reg,cx,cy){
   const R=REG[reg];if(!R)return;const m=$("#ctx");
-  m.innerHTML=`<div class="ctx-h"><b>${esc(R.t)}</b><button class="ctx-x" type="button" data-ctxx aria-label="Chiudi">✕</button></div><div class="ctx-l">`+
+  m.innerHTML=`<div class="ctx-h"><b>${esc(R.t)}</b><button class="ctx-x" type="button" data-ctxx aria-label="Chiudi">✕</button></div>${opChips()}<div class="ctx-l">`+
     R.a.filter(id=>ACT[id]).map(id=>`<button type="button" class="ctx-i" role="menuitem" data-ctx="${id}"><span></span><small></small></button>`).join("")+`</div>`;
   refreshCtx();m.hidden=false;
   const w=Math.min(272,innerWidth-16);m.style.width=w+"px";
   const h=m.offsetHeight;let x=clamp(cx-w/2,8,innerWidth-w-8),y=cy+14;if(y+h>innerHeight-8)y=Math.max(8,cy-h-14);
   m.style.left=x+"px";m.style.top=y+"px";const hn=$("#mHint");if(hn)hn.hidden=true;
 }
-function refreshCtx(){document.querySelectorAll("#ctx [data-ctx]").forEach(b=>{const id=b.dataset.ctx,run=!!taskOf(id),why=blocked(id);
+function refreshCtx(){const oc=$("#ctx .ctx-ops");if(oc){const h=opChips();if(oc.outerHTML!==h)oc.outerHTML=h}document.querySelectorAll("#ctx [data-ctx]").forEach(b=>{const id=b.dataset.ctx,run=!!taskOf(id),why=blocked(id);
   b.querySelector("span").textContent=labelOf(id);b.querySelector("small").textContent=ctxNote(id);b.disabled=!!why&&!run;b.classList.toggle("run",run)})}
 function closeCtx(){$("#ctx").hidden=true}
 document.addEventListener("click",e=>{
   const c=e.target.closest("[data-ctx]");if(c){startAction(c.dataset.ctx);closeCtx();return}
   if(e.target.closest("[data-ctxx]")){closeCtx();return}
-  if(!$("#ctx").hidden&&!e.target.closest("#ctx")&&!e.target.closest("#tdSvg")&&!e.target.closest("#ptSvg"))closeCtx();
+  if(!$("#ctx").hidden&&!e.target.closest("#ctx")&&!e.target.closest("#tdSvg")&&!e.target.closest("#ptSvg")&&!e.target.closest(".team"))closeCtx();
 },true);
 document.addEventListener("keydown",e=>{if(e.key==="Escape"&&!$("#ctx").hidden){e.preventDefault();closeCtx()}});
 window.addEventListener("scroll",()=>{if(!MOB)closeCtx()},{passive:true});
@@ -3462,6 +3578,7 @@ function micStop(send){MIC.sendOnEnd=!!send;
 })();
 getSample();
 window.__appBack=()=>{
+  if(!$("#bagw").hidden){closeBag();return true}
   if(DF.open){closeDefib();return true}
   if(!$("#ctx").hidden){closeCtx();return true}
   if(MOB&&MPANE&&!$("#sim").hidden){mobSheet(null);return true}
