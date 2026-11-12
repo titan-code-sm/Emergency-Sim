@@ -336,6 +336,54 @@ button{font:inherit;color:inherit}
 @media (max-width:600px){.simbar{position:static}}
 .vgrp{grid-column:1/-1;display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:8px}
 .vset>label:first-child{grid-column:1/-1}
+/* DEFIBRILLATORE FOTOGRAFICO */
+.df{width:min(1240px,100%,calc((100dvh - 190px) * 1.657 + 28px))}
+.dfstage{margin-bottom:54px}
+.dfstage>.df-cables{position:absolute;top:calc(100% + 10px);left:0;right:0}
+#dfK_anal{font-size:.62cqw}
+#dfw #dfK_pow[aria-pressed="true"]{box-shadow:0 0 0 .3cqw #3ee07a;background:rgba(62,224,122,.12)}
+.df-hint{font-size:12.5px;color:#9aa4ae;flex:1;text-align:center}
+.dfstage{position:relative;width:100%;aspect-ratio:1823/1100}
+.dfcrop{position:absolute;inset:0}
+.dfdev{position:absolute;inset:0;container-type:inline-size}
+.dfdev img{position:absolute;inset:0;width:100%;height:100%;user-select:none;-webkit-user-drag:none}
+.hk{position:absolute;display:grid;place-items:center;border:0;padding:0;margin:0;background:transparent;border-radius:.55cqw;font:700 .78cqw/1 var(--f-body);letter-spacing:.03em;color:#1e2329;cursor:pointer;text-align:center;-webkit-tap-highlight-color:transparent}
+.hk-d,.hk-g{color:#f2f5f8}
+.hk:hover:not(:disabled){box-shadow:0 0 0 .22cqw rgba(255,255,255,.75)}
+.hk:active:not(:disabled){background:rgba(0,0,0,.22);transform:translateY(.08cqw)}
+.hk:focus-visible{outline:.25cqw solid #6aa5ec;outline-offset:.15cqw}
+.hk:disabled{cursor:default}
+.hk[aria-pressed="true"]{box-shadow:0 0 0 .3cqw #3ea0ff;background:rgba(62,160,255,.18)}
+.hk-shk{border-radius:2cqw}
+.hk-shk.ready{animation:hkBlink .5s steps(2) infinite}
+@keyframes hkBlink{50%{box-shadow:0 0 0 .5cqw rgba(255,140,30,.9);background:rgba(255,190,120,.35)}}
+.hk-dial{border-radius:1cqw}.hk-dial.c{border-radius:50%}
+.dfstage .df-scr{position:absolute;left:29.07%;top:28.36%;width:35.71%;height:50.45%;border:0;border-radius:3px;padding:1.1% 1.3%;gap:0;container-type:inline-size;display:grid;grid-template-rows:auto minmax(0,1.4fr) minmax(0,1fr) minmax(0,1fr) auto;font-family:var(--f-mono)}
+.dfstage .df-st{font-size:3.4cqw;min-height:0;padding-bottom:.6cqw;gap:2cqw}
+.dfstage .df-row{grid-template-columns:minmax(0,1fr) 25%;gap:1cqw;min-height:0}
+.dfstage .df-tr{min-height:0}
+.dfstage .df-tr canvas,.dfstage .df-row:first-of-type .df-tr canvas{height:100%}
+.dfstage .df-l{font-size:2.8cqw}
+.dfstage .df-n{padding:0 1cqw}
+.dfstage .df-n span{font-size:2.8cqw}.dfstage .df-n small{font-size:2.6cqw}
+.dfstage .df-n b{font-size:9.5cqw}.dfstage .df-n.co b{font-size:7.5cqw}
+.dfstage .df-bot{padding-top:.8cqw;gap:3cqw}
+.dfstage .df-bot .pa b{font-size:7.5cqw}.dfstage .df-bot .tp b{font-size:5.5cqw}
+.dfstage .df-pace{font-size:2.8cqw}
+.dfstage .df-menu{inset:9cqw 1.5cqw 1.5cqw;font-size:3.3cqw;padding:2cqw 2.5cqw}
+.dfstage .df-menu h6{font-size:3cqw}
+.df-cables{display:flex;flex-wrap:wrap;gap:6px;align-items:center}
+.df-cables b{font-size:11.5px;letter-spacing:.08em;text-transform:uppercase;color:#9aa4ae;font-family:var(--f-cond);margin-right:4px}
+.df-cables .dk{min-height:36px;padding:7px 12px}
+@media (max-width:760px){
+  .df-hint{display:none}
+  .df{width:100%}
+  .dfstage{margin-bottom:0;aspect-ratio:auto;display:grid;grid-template-columns:minmax(0,46%) minmax(0,1fr);gap:10px;align-items:start}
+  .dfstage .df-scr{position:relative;left:auto;top:auto;width:auto;height:auto;grid-column:1/-1;order:-1;aspect-ratio:1.18;border:5px solid #15181c;border-radius:8px}
+  .dfcrop{position:relative;inset:auto;aspect-ratio:220/680;overflow:hidden;border-radius:12px;background:#2c3238}
+  .dfdev{inset:auto;left:-553.6%;top:-45%;width:828.6%;height:161.8%}
+  .dfstage>.df-cables{position:static;flex-direction:column;align-items:stretch}
+}
 /* MENU CONTESTUALE SUL PAZIENTE */
 .ctx{position:fixed;z-index:58;background:var(--panel);border:1px solid var(--line);border-radius:10px;box-shadow:0 12px 34px rgba(14,22,34,.28);max-height:min(62vh,460px);display:grid;grid-template-rows:auto minmax(0,1fr);overflow:hidden}
 .ctx-h{display:flex;align-items:center;justify-content:space-between;gap:8px;padding:8px 8px 8px 12px;border-bottom:1px solid var(--line);background:var(--panel2)}
@@ -761,8 +809,9 @@ html.mobon:not(.mobport) .mob-dock svg{width:18px;height:18px}
 </main>
 <div class="dfw" id="dfw" hidden>
   <div class="df" role="dialog" aria-modal="true" aria-label="Monitor-defibrillatore">
-    <div class="df-top"><b>Monitor-defibrillatore</b><button type="button" class="dk pow" data-df="pow" id="dfPow" aria-pressed="true"><i>1</i>ON</button><button type="button" class="x" data-df="x" id="dfX" aria-label="Chiudi">✕</button></div>
-    <div class="df-body">
+    <div class="df-top"><b>Monitor-defibrillatore</b><span class="df-hint">Tocca i tasti del dispositivo · manopola: ruota e premi per il menu</span><button type="button" class="x" data-df="x" id="dfX" aria-label="Chiudi">✕</button></div>
+    <div class="dfstage">
+      <div class="dfcrop"><div class="dfdev"><img src="assets/kit/monitor.webp" alt="Monitor-defibrillatore" draggable="false"><button type="button" class="hk hk-g" data-df="pow" id="dfK_pow" style="left:73.56%;top:29.27%;width:4.00%;height:3.27%" title="Accensione" aria-label="Accensione"></button><button type="button" class="hk hk-l" data-df="anal" id="dfK_anal" style="left:68.35%;top:29.27%;width:4.06%;height:3.27%" title="Analizza" aria-label="Analizza">ANALIZZA</button><button type="button" class="hk hk-l" data-df="sync" id="dfK_sync" style="left:68.35%;top:34.18%;width:4.06%;height:3.36%" title="Sincronizzato" aria-label="Sincronizzato">SYNC</button><button type="button" class="hk hk-l" data-df="lead" id="dfK_lead" style="left:68.35%;top:39.18%;width:4.06%;height:3.27%" title="Derivazione" aria-label="Derivazione">DERIV.</button><button type="button" class="hk hk-l" data-df="enU" id="dfK_enU" style="left:73.56%;top:34.18%;width:4.00%;height:4.09%" title="Energia +" aria-label="Energia +">J +</button><button type="button" class="hk hk-l" data-df="enD" id="dfK_enD" style="left:73.56%;top:38.27%;width:4.00%;height:4.09%" title="Energia −" aria-label="Energia −">J −</button><button type="button" class="hk hk-l" data-df="cpr" id="dfK_cpr" style="left:73.56%;top:44.18%;width:4.00%;height:3.27%" title="Metronomo RCP" aria-label="Metronomo RCP">RCP</button><button type="button" class="hk hk-y" data-df="chg" id="dfK_chg" style="left:68.35%;top:49.18%;width:4.06%;height:3.36%" title="Carica" aria-label="Carica">CARICA</button><button type="button" class="hk hk-d" data-df="pacer" id="dfK_pacer" style="left:73.56%;top:49.18%;width:4.00%;height:3.36%" title="Pacer" aria-label="Pacer">PACER</button><button type="button" class="hk hk-d" data-df="nibp" id="dfK_nibp" style="left:68.35%;top:54.18%;width:4.06%;height:3.36%" title="Misura PA" aria-label="Misura PA">PA</button><button type="button" class="hk hk-d" data-df="up" id="dfK_up" style="left:73.56%;top:54.18%;width:4.00%;height:3.36%" title="Su · corrente +" aria-label="Su · corrente +"></button><button type="button" class="hk hk-d" data-df="alarm" id="dfK_alarm" style="left:68.35%;top:59.18%;width:4.06%;height:3.45%" title="Allarmi" aria-label="Allarmi"></button><button type="button" class="hk hk-d" data-df="down" id="dfK_down" style="left:73.56%;top:59.18%;width:4.00%;height:3.45%" title="Giù · corrente −" aria-label="Giù · corrente −"></button><button type="button" class="hk hk-d" data-df="event" id="dfK_event" style="left:68.35%;top:64.36%;width:4.06%;height:3.45%" title="Evento" aria-label="Evento">EVENTO</button><button type="button" class="hk hk-shk" data-df="shock" id="dfShock" style="left:70.82%;top:69.45%;width:6.14%;height:5.45%" title="Shock" aria-label="Shock"></button><button type="button" class="hk hk-dial" data-df="dialL" style="left:70.27%;top:77.18%;width:2.69%;height:11.27%" title="Manopola: ruota a sinistra" aria-label="Manopola a sinistra"></button><button type="button" class="hk hk-dial" data-df="dialR" style="left:74.38%;top:77.18%;width:2.69%;height:11.27%" title="Manopola: ruota a destra" aria-label="Manopola a destra"></button><button type="button" class="hk hk-dial c" data-df="dialP" style="left:72.30%;top:80.55%;width:2.74%;height:4.55%" title="Manopola: premi (menu)" aria-label="Premi la manopola"></button><button type="button" class="hk hk-dial" data-df="print" style="left:39.82%;top:81.18%;width:17.72%;height:9.36%" title="Stampa" aria-label="Stampa"></button></div></div>
       <div class="df-scr">
         <div class="df-st"><span id="dfClock">00:00</span><span id="dfModeT">MANUALE</span><span id="dfMsg"></span><span id="dfEn">200 J</span></div>
         <div class="df-row"><div class="df-tr"><span class="df-l" id="dfLeadT">II</span><canvas id="dfE"></canvas></div><div class="df-n hr"><span>FC</span><b id="dfHR">---</b><small>bpm</small></div></div>
@@ -771,14 +820,7 @@ html.mobon:not(.mobport) .mob-dock svg{width:18px;height:18px}
         <div class="df-bot"><div class="df-n pa"><span>PA mmHg</span><b id="dfPA">---/---</b><small id="dfPAt"></small></div><div class="df-n tp"><span>Temp °C</span><b id="dfTE">--</b></div><span class="df-pace" id="dfPace"></span></div>
         <div class="df-menu" id="dfMenu" hidden></div>
       </div>
-      <div class="df-keys">
-        <div class="df-grp"><h5>Defibrillazione · 1 · 2 · 3</h5><div class="df-kr"><button type="button" class="dk " data-df="enD" id="dfEnD"><i>2</i>Energia −</button><button type="button" class="dk " data-df="enU" id="dfEnU"><i>2</i>Energia +</button><button type="button" class="dk chg" data-df="chg" id="dfChg"><i>3</i>Carica</button><button type="button" class="dk shk" data-df="shock" id="dfShock">⚡ SHOCK</button><button type="button" class="dk anl" data-df="anal" id="dfAnal">Analizza</button><button type="button" class="dk" data-df="sync" id="dfSync" aria-pressed="false">Sync</button></div></div>
-        <div class="df-grp"><h5>Monitoraggio</h5><div class="df-kr"><button type="button" class="dk " data-df="cpr" id="dfCpr">RCP</button><button type="button" class="dk " data-df="lead" id="dfLead">Derivaz.</button><button type="button" class="dk " data-df="size" id="dfSize">Ampiezza</button><button type="button" class="dk " data-df="nibp" id="dfNibp">PA</button><button type="button" class="dk " data-df="alarm" id="dfAlarm">Allarmi</button><button type="button" class="dk " data-df="opt" id="dfOpt">Opzioni</button><button type="button" class="dk " data-df="event" id="dfEvent">Evento</button><button type="button" class="dk " data-df="home" id="dfHome">Home</button></div></div>
-        <div class="df-grp"><h5>Pacing</h5><div class="df-kr"><button type="button" class="dk" data-df="pacer" id="dfPacer" aria-pressed="false">Pacer</button><button type="button" class="dk " data-df="rateD" id="dfRateD">Freq −</button><button type="button" class="dk " data-df="rateU" id="dfRateU">Freq +</button><button type="button" class="dk" data-df="pause" id="dfPause" aria-pressed="false">Pausa</button><button type="button" class="dk " data-df="maD" id="dfMaD">mA −</button><button type="button" class="dk " data-df="maU" id="dfMaU">mA +</button></div></div>
-        <div class="df-grp"><h5>ECG e registrazione</h5><div class="df-kr"><button type="button" class="dk " data-df="ecg12" id="dfEcg12">ECG 12</button><button type="button" class="dk " data-df="tx" id="dfTx">Trasmetti</button><button type="button" class="dk " data-df="sum" id="dfSum">Riepilogo</button><button type="button" class="dk " data-df="print" id="dfPrint">Stampa</button></div></div>
-        <div class="df-grp"><h5>Selettore</h5><div class="df-kr dial"><button type="button" class="dk " data-df="dialL" id="dfDialL">◀</button><button type="button" class="dk " data-df="dialP" id="dfDialP">●</button><button type="button" class="dk " data-df="dialR" id="dfDialR">▶</button></div></div>
-        <div class="df-grp"><h5>Collegamenti</h5><div class="df-kr"><button type="button" class="dk cn" data-df="cEcg" id="dfCEcg">Elettrodi ECG</button><button type="button" class="dk cn" data-df="cPads" id="dfCPads">Piastre</button><button type="button" class="dk cn" data-df="cSpo2" id="dfCSpo2">Saturimetro</button><button type="button" class="dk cn" data-df="cNibp" id="dfCNibp">Bracciale PA</button><button type="button" class="dk cn" data-df="cCo2" id="dfCCo2">EtCO₂</button></div></div>
-      </div>
+      <div class="df-cables"><b>Cavi paziente</b><button type="button" class="dk cn" data-df="cEcg" id="dfCEcg">Elettrodi ECG</button><button type="button" class="dk cn" data-df="cPads" id="dfCPads">Piastre</button><button type="button" class="dk cn" data-df="cSpo2" id="dfCSpo2">Saturimetro</button><button type="button" class="dk cn" data-df="cNibp" id="dfCNibp">Bracciale PA</button><button type="button" class="dk cn" data-df="cCo2" id="dfCCo2">EtCO₂</button></div>
     </div>
   </div>
 </div>
@@ -2296,12 +2338,13 @@ function renderVehicles(){
 /* ---------- SCHERMATE ---------- */
 function show(id){for(const s of ["home","brief","sim","deb","remote"])$("#"+s).hidden=s!==id;document.documentElement.classList.toggle("insim",id==="sim");if(id!=="sim"&&typeof closeCtx==="function")closeCtx();window.scrollTo(0,0)}
 const CARD_IMG={anafilassi:"34% 42%",fv:"76% 62%",ipo:"60% 30%",stemi:"70% 58%",trauma:"2% 70%"};
+const CARD_SRC={stemi:["assets/stemi/s_ecg12.jpg","46% 55%"]};
 const CARD_SEV={Base:"lv1",Intermedio:"lv2",Avanzato:"lv3"};
 function renderCards(filter){
   $("#cards").innerHTML=SCEN.filter(s=>filter==="all"||s.setting===filter).map(s=>`
     <article class="card">
       <button class="card-hit" type="button" data-open="${s.id}" aria-label="Apri lo scenario: ${esc(s.title)}">
-        <span class="card-img" style="background-position:${CARD_IMG[s.id]||"50% 50%"}"><span class="tag ${s.setting==="Territorio"?"terr":"osp"}">${s.setting==="Territorio"?"Pre-ospedaliero":"Intra-ospedaliero"}</span></span>
+        <span class="card-img" style="${CARD_SRC[s.id]?`background-image:url(${CARD_SRC[s.id][0]});background-size:cover;background-position:${CARD_SRC[s.id][1]}`:`background-position:${CARD_IMG[s.id]||"50% 50%"}`}"><span class="tag ${s.setting==="Territorio"?"terr":"osp"}">${s.setting==="Territorio"?"Pre-ospedaliero":"Intra-ospedaliero"}</span></span>
         <span class="card-b">
           <span class="card-meta"><span class="lv ${CARD_SEV[s.level]||""}"><i></i><i></i><i></i>${s.level}</span><span>${Math.round(s.limit/60)} min sul posto</span></span>
           <span class="card-t">${esc(s.title)}</span>
@@ -2898,63 +2941,83 @@ document.addEventListener("click",e=>{const b=e.target.closest("[data-kit]");if(
 function kitBring(list,who){let n=0;for(const k of list)if(!S.kit[k]){S.kit[k]=true;n++}if(n){buildKitLayer();if(who)addLog(who+" porta "+list.map(k=>KIT[k].s).join(", ")+".","sys")}}
 
 /* ---------- FOTO REALISTICHE ---------- */
-const PHOTO={stemi:{w:620,h:346,img:{base:"assets/stemi/base.jpg",ecg:"assets/stemi/ecg.jpg",o2:"assets/stemi/o2.jpg",pads:"assets/stemi/pads.jpg",cpr:"assets/stemi/cpr.jpg"}}};
+const SCR_N=[0.3394,0.0698,-0.0722,0.340,369.2,69.3];
+const PHOTO={stemi:{w:620,h:346,
+  img:{base:"assets/stemi/s_team.jpg",val:"assets/stemi/s_val.jpg",ecg:"assets/stemi/s_ecg.jpg",ecg12:"assets/stemi/s_ecg12.jpg",ev:"assets/stemi/s_ev.jpg",o2:"assets/stemi/o2.jpg",pads:"assets/stemi/pads.jpg",cpr:"assets/stemi/cpr.jpg"},
+  frame:{base:"n",val:"n",ecg:"n",ecg12:"n",ev:"n",o2:"o",pads:"o",cpr:"o"},
+  has:{n:["mon","zaino"],o:[]},
+  arm:{pts:"178,346 397,346 334,212 306,132 238,134 222,212",cx:272,cy:176}}};
 let PH=null,TDW=620,TDH=250;
-function phKey(){const c=S.conn;if(S.cpr&&S.arrest)return"cpr";if(c.pads)return"pads";if(S.f.o2||S.f.bvm)return"o2";if(c.ecg||c.spo2)return"ecg";return"base"}
+const VAL_T=new Set(["A","B","C","D","E","sample","scena","gluco","temp","rassicura"]);
+function phKey(){const c=S.conn,t=id=>!!taskOf(id);
+  if(S.cpr&&S.arrest)return"cpr";if(c.pads)return"pads";if(S.f.o2||S.f.bvm)return"o2";
+  if(S.done.ev!=null||t("ev"))return"ev";if(S.done.ecg12!=null||t("ecg12"))return"ecg12";
+  if(c.ecg||c.spo2||t("ecg")||t("spo2"))return"ecg";
+  if(S.tasks.some(x=>VAL_T.has(x.id)||x.id.startsWith("ex_")))return"val";return"base"}
+function phFrameKind(){return PH&&PH.key?PHOTO[SC.id].frame[PH.key]:"n"}
 function buildPhotoTop(){
-  const P=PHOTO[SC.id];PH={key:null,front:0};TDW=P.w;TDH=P.h;const sv=$s("tdSvg");
+  const P=PHOTO[SC.id];PH={key:null,front:0,fr:null};TDW=P.w;TDH=P.h;const sv=$s("tdSvg");
   for(const u of Object.values(P.img)){const i=new Image();i.src=u}
-  sv.innerHTML=`<image id="phA" href="${P.img.base}" x="0" y="0" width="${P.w}" height="${P.h}" preserveAspectRatio="xMidYMid slice"/>
+  sv.innerHTML=`<defs><clipPath id="phArmClip"><polygon points="${P.arm.pts}"/></clipPath></defs>
+    <image id="phA" href="${P.img.base}" x="0" y="0" width="${P.w}" height="${P.h}" preserveAspectRatio="xMidYMid slice"/>
     <image id="phB" href="${P.img.base}" x="0" y="0" width="${P.w}" height="${P.h}" preserveAspectRatio="xMidYMid slice" opacity="0" style="transition:opacity .6s ease"/>
+    <g id="phArm" clip-path="url(#phArmClip)" opacity="0" pointer-events="none"><image href="${P.img.cpr}" x="0" y="0" width="${P.w}" height="${P.h}" preserveAspectRatio="xMidYMid slice"/></g>
     <rect id="phTint" width="${P.w}" height="${P.h}" fill="#3b5fa8" opacity="0" style="mix-blend-mode:color;pointer-events:none"/>
     <rect id="tdFlash" width="${P.w}" height="${P.h}" fill="#fff" opacity="0" pointer-events="none"/>
     <g id="tdBub" class="off"><path id="tdBubP"/><text id="tdBubT"></text></g>`;
-  orientTop();buildKitLayer();
+  orientTop();phFrame();
 }
 function phFrame(){
-  const k=phKey();
-  if(k!==PH.key){PH.key=k;const u=PHOTO[SC.id].img[k];const nb=PH.front?$s("phA"):$s("phB"),ob=PH.front?$s("phB"):$s("phA");
+  const k=phKey(),P=PHOTO[SC.id];
+  if(k!==PH.key){PH.key=k;const u=P.img[k];const nb=PH.front?$s("phA"):$s("phB"),ob=PH.front?$s("phB"):$s("phA");
     nb.setAttribute("href",u);nb.style.transition="opacity .6s ease";ob.style.transition="opacity .6s ease";
-    requestAnimationFrame(()=>{nb.setAttribute("opacity","1");ob.setAttribute("opacity","0")});PH.front=1-PH.front}
+    requestAnimationFrame(()=>{nb.setAttribute("opacity","1");ob.setAttribute("opacity","0")});PH.front=1-PH.front;
+    const fr=P.frame[k];if(fr!==PH.fr){PH.fr=fr;buildKitLayer()}}
+  const arm=$s("phArm");
+  if(k==="cpr"&&S.cpr&&S.run){const ph=(tW*110/60)%1,sc=1+.032*Math.max(0,Math.sin(2*PI*ph));
+    arm.setAttribute("opacity","1");arm.setAttribute("transform",`translate(${P.arm.cx} ${P.arm.cy}) scale(${sc.toFixed(4)}) translate(${-P.arm.cx} ${-P.arm.cy})`)}
+  else arm.setAttribute("opacity","0");
   const cy=S.arrest?.22:S.v.spo2<88?.12:0;$s("phTint").setAttribute("opacity",String(cy));
   const f=$s("tdFlash");if(f){const a=FX.shockT?Math.max(0,1-(performance.now()-FX.shockT)/350):0;f.setAttribute("opacity",(a*.8).toFixed(2))}
 }
-function phRegion(x,y){if(x<150)return"testa";if(x>=350)return y<165?"gsx":"gdx";if(y<118)return"bsx";if(y>215)return"bdx";if(x>=312)return"bacino";return"torace"}
+function phRegion(x,y){
+  if(phFrameKind()==="o"){if(x<150)return"testa";if(x>=350)return y<165?"gsx":"gdx";if(y<118)return"bsx";if(y>215)return"bdx";if(x>=312)return"bacino";return"torace"}
+  if(x<212)return"testa";
+  if(y<150&&x<385)return"bsx";if(y>228&&x<390)return"bdx";
+  if(x>=335)return y<183?"gsx":"gdx";
+  if(x>=305)return"bacino";return"torace"}
 
 /* presidi disegnati vicino al paziente */
-const KPOS={ph:{mon:[345,54,.95],zaino:[478,44,.95],o2:[560,312,.9],asp:[92,306,.9],trauma:[470,322,.85],emo:[250,318,.9]},
-  sv:{mon:[372,27,.68],zaino:[488,24,.62],o2:[566,232,.62],asp:[40,226,.62],trauma:[420,238,.55],emo:[250,236,.62]}};
-function kitSvg(k){
-  const sh=`<ellipse cx="3" cy="5" rx="52" ry="34" fill="#000" opacity=".22" filter="url(#kBlur)"/>`;
-  switch(k){
-    case"mon":return `<g id="kMonR">${sh}<rect x="-50" y="-34" width="100" height="68" rx="9" fill="#33383f"/><rect x="-50" y="-34" width="100" height="68" rx="9" fill="none" stroke="#1b1e22" stroke-width="2"/>
-      <rect x="-30" y="-41" width="40" height="9" rx="4" fill="#24282d"/><rect x="-44" y="-27" width="66" height="46" rx="3" fill="#05090f"/>
-      <polyline id="kMonE" fill="none" stroke="#3ee07a" stroke-width="1.3" points=""/><polyline id="kMonP" fill="none" stroke="#44c8f5" stroke-width="1.1" points=""/>
-      <text id="kMonHR" x="20" y="-13" text-anchor="end" font-family="IBM Plex Mono,monospace" font-size="11" font-weight="600" fill="#3ee07a">---</text>
-      <text id="kMonSP" x="20" y="4" text-anchor="end" font-family="IBM Plex Mono,monospace" font-size="9" font-weight="600" fill="#44c8f5">---</text>
-      <text id="kMonPA" x="-41" y="15" font-family="IBM Plex Mono,monospace" font-size="6.5" fill="#e8eef5">PA ---/---</text>
-      <circle cx="36" cy="-20" r="5" fill="#f5c400"/><circle cx="36" cy="-4" r="6.5" fill="#f07b16" stroke="#b5520a"/><circle id="kMonLed" cx="36" cy="-4" r="2.4" fill="#fff" opacity="0"/>
-      <rect x="29" y="8" width="14" height="5" rx="2" fill="#5a6068"/><rect x="29" y="16" width="14" height="5" rx="2" fill="#5a6068"/>
-      <rect x="-44" y="23" width="66" height="6" rx="2" fill="#4a4f56"/><text x="-11" y="28" text-anchor="middle" font-family="IBM Plex Sans,sans-serif" font-size="4.5" fill="#cfd5dc">TOCCA PER APRIRE</text></g>`;
-    case"zaino":return `${sh}<rect x="-38" y="-27" width="76" height="54" rx="12" fill="#b8261c"/><rect x="-30" y="-19" width="60" height="22" rx="6" fill="#9a1d15"/>
-      <rect x="-38" y="8" width="76" height="5" fill="#d9dde2" opacity=".85"/><rect x="-6" y="-27" width="12" height="54" fill="#8a1a12" opacity=".5"/><path d="M-8 -9h16M0 -17v16" stroke="#fff" stroke-width="4"/>`;
-    case"o2":return `<ellipse cx="2" cy="4" rx="48" ry="13" fill="#000" opacity=".22" filter="url(#kBlur)"/><rect x="-44" y="-10" width="80" height="20" rx="10" fill="#e9edf0"/><rect x="18" y="-10" width="18" height="20" rx="9" fill="#fff"/>
-      <rect x="34" y="-5" width="12" height="10" rx="2" fill="#8d959e"/><rect x="-44" y="-10" width="80" height="20" rx="10" fill="none" stroke="#b9c1c9"/><path d="M-30 -10v20M-18 -10v20" stroke="#2f8a4b" stroke-width="3"/>`;
-    case"asp":return `${sh}<rect x="-26" y="-20" width="52" height="40" rx="6" fill="#f2c318"/><rect x="-22" y="-16" width="20" height="32" rx="3" fill="#1f4f9a"/><circle cx="12" cy="0" r="10" fill="#dfe6ee" stroke="#9aa6b2"/><circle cx="12" cy="0" r="5" fill="#c43b2c" opacity=".35"/>`;
-    case"trauma":return `<ellipse cx="2" cy="4" rx="130" ry="20" fill="#000" opacity=".2" filter="url(#kBlur)"/><rect x="-125" y="-17" width="250" height="34" rx="16" fill="#f0b400"/>
-      ${[-95,-60,-25,10,45,80].map(x=>`<rect x="${x}" y="-12" width="18" height="7" rx="3.5" fill="#b88400"/><rect x="${x}" y="5" width="18" height="7" rx="3.5" fill="#b88400"/>`).join("")}<rect x="96" y="-10" width="22" height="20" rx="6" fill="#e5552b"/>`;
-    case"emo":return `${sh}<rect x="-24" y="-16" width="48" height="32" rx="6" fill="#262a2f"/><rect x="-24" y="-3" width="48" height="6" fill="#c8192e"/><rect x="-8" y="-16" width="16" height="32" fill="#3a3f46"/>`;
-  }return""}
+const KIMG={mon:["assets/kit/monitor.webp",1600/965],zaino:["assets/kit/zaino.webp",440/520],o2:["assets/kit/bombola.webp",700/226],asp:["assets/kit/aspiratore.webp",520/513],trauma:["assets/kit/tavola.webp",900/318],emo:["assets/kit/emo.webp",520/474]};
+const KPOS={n:{zaino:[266,62,92],mon:[386,84,100],o2:[505,72,98],asp:[168,76,58],emo:[248,292,58],trauma:[570,250,130]},
+  o:{mon:[345,58,100],zaino:[478,50,74],o2:[520,316,96],asp:[92,300,62],trauma:[130,330,150],emo:[440,318,58]},
+  sv:{mon:[372,30,78],zaino:[488,30,54],o2:[566,232,76],asp:[40,224,46],trauma:[420,238,150],emo:[250,236,46]}};
+function miniScr(){return `<rect width="100" height="80" fill="#04070c"/>
+  <text x="3" y="9" font-family="IBM Plex Mono,monospace" font-size="6" fill="#3ee07a">II</text>
+  <polyline id="kMonE" fill="none" stroke="#3ee07a" stroke-width="1.6" stroke-linejoin="round" points=""/>
+  <polyline id="kMonP" fill="none" stroke="#44c8f5" stroke-width="1.4" stroke-linejoin="round" points=""/>
+  <text id="kMonHR" x="97" y="25" text-anchor="end" font-family="IBM Plex Mono,monospace" font-size="17" font-weight="600" fill="#3ee07a">---</text>
+  <text id="kMonSP" x="97" y="53" text-anchor="end" font-family="IBM Plex Mono,monospace" font-size="14" font-weight="600" fill="#44c8f5">---</text>
+  <text id="kMonPA" x="3" y="75" font-family="IBM Plex Mono,monospace" font-size="8" fill="#e8eef5">PA ---/---</text>
+  <circle id="kMonLed" cx="94" cy="72" r="3.5" fill="#ff9a3d" opacity="0"/>`}
+function kitImg(k,x,y,w){const [src,ar]=KIMG[k],h=w/ar;
+  if(k!=="mon")return `<g id="k_${k}"><image href="${src}" x="${(x-w/2).toFixed(1)}" y="${(y-h/2).toFixed(1)}" width="${w}" height="${h.toFixed(1)}" filter="url(#kShadow)"/></g>`;
+  const x0=x-w/2,y0=y-h/2,sx=w*.3571/100,sy=h*.5048/80;
+  return `<g id="kMon" style="cursor:pointer"><image href="${src}" x="${x0.toFixed(1)}" y="${y0.toFixed(1)}" width="${w}" height="${h.toFixed(1)}" filter="url(#kShadow)"/>
+    <g transform="matrix(${sx.toFixed(4)} 0 0 ${sy.toFixed(4)} ${(x0+w*.2907).toFixed(2)} ${(y0+h*.2838).toFixed(2)})">${miniScr()}</g></g>`}
 function buildKitLayer(){
   const root=$s("tdRot")||$s("tdSvg");if(!root||!S||!S.kit)return;let g=$s("tdKit");if(g)g.remove();
   g=document.createElementNS("http://www.w3.org/2000/svg","g");g.id="tdKit";
-  const pos=PH?KPOS.ph:KPOS.sv;
-  g.innerHTML=`<defs><filter id="kBlur" x="-30%" y="-30%" width="160%" height="160%"><feGaussianBlur stdDeviation="3"/></filter></defs>`+
-    Object.keys(KIT).filter(k=>S.kit[k]&&!(S.phase==="trasporto")).map(k=>{const [x,y,s]=pos[k];return `<g id="${k==="mon"?"kMon":"k_"+k}" transform="translate(${x} ${y}) scale(${s})" ${k==="mon"?'style="cursor:pointer"':""}>${kitSvg(k)}</g>`}).join("");
+  const fr=PH?(PH.fr||"n"):null,pos=PH?KPOS[fr]:KPOS.sv,has=PH?PHOTO[SC.id].has[fr]:[];
+  let h=`<defs><filter id="kShadow" x="-20%" y="-20%" width="140%" height="150%"><feDropShadow dx="1.5" dy="2.5" stdDeviation="2.2" flood-opacity=".38"/></filter></defs>`;
+  if(S.phase!=="trasporto"){
+    for(const k of Object.keys(KIT)){if(!S.kit[k]||has.includes(k))continue;const [x,y,w]=pos[k];h+=kitImg(k,x,y,w)}
+    if(has.includes("mon")&&S.kit.mon)h+=`<g id="kMon" style="cursor:pointer"><rect x="336" y="48" width="104" height="74" fill="transparent"/><g transform="matrix(${SCR_N.join(" ")})">${miniScr()}</g></g>`;
+  }
+  g.innerHTML=h;
   const fl=$s("tdFlash");if(fl&&fl.parentNode===root)root.insertBefore(g,fl);else root.appendChild(g);
-  kitOrient();
 }
-function kitOrient(){const r=$s("kMonR");if(r)r.setAttribute("transform",MOB&&PORT?"rotate(-90)":"")}
+function kitOrient(){}
 const MBUF={e:[],p:[]};
 function kitFrame(){
   if(!S||!S.dev)return;
@@ -2963,8 +3026,8 @@ function kitFrame(){
   if(S.dev.metro&&S.cpr&&soundOn&&AC&&S.run){const n=performance.now();if(!DF.mT||n-DF.mT>545){DF.mT=n;try{const o=AC.createOscillator(),g=AC.createGain(),t=AC.currentTime;o.frequency.value=880;g.gain.setValueAtTime(.05,t);g.gain.exponentialRampToValueAtTime(.0001,t+.05);o.connect(g).connect(AC.destination);o.start(t);o.stop(t+.06)}catch(e){}}}
   const E=$s("kMonE");if(!E)return;
   const on=S.dev.on,ecgOn=on&&(S.conn.ecg||S.conn.pads),spOn=on&&S.conn.spo2;
-  const mk=(buf,y0,amp)=>{const n=buf.length,pts=[];for(let i=0;i<n;i++){const v=buf[i];if(v==null)continue;pts.push((-42+i*(58/120)).toFixed(1)+","+(y0-v*amp).toFixed(1))}return pts.join(" ")};
-  E.setAttribute("points",ecgOn?mk(MBUF.e,-14,9):"");$s("kMonP").setAttribute("points",spOn?mk(MBUF.p,4,6):"");
+  const mk=(buf,y0,amp)=>{const n=buf.length,pts=[];for(let i=0;i<n;i++){const v=buf[i];if(v==null)continue;pts.push((3+i*(64/120)).toFixed(1)+","+(y0-v*amp).toFixed(1))}return pts.join(" ")};
+  E.setAttribute("points",ecgOn?mk(MBUF.e,24,13):"");$s("kMonP").setAttribute("points",spOn?mk(MBUF.p,52,10):"");
   $s("kMonHR").textContent=ecgOn?(organized()?String(Math.round(S.v.hr)):"---"):"---";
   $s("kMonSP").textContent=spOn&&perfusing()?String(Math.round(S.v.spo2)):"---";
   $s("kMonPA").textContent=on&&S.nibp&&!S.nibp.err?`PA ${S.nibp.s}/${S.nibp.d}`:"PA ---/---";
@@ -2982,11 +3045,14 @@ function co2Sample(){if(!S.conn.etco2)return null;const rr=S.arrest?((S.f.bvm||S
 const DF={open:false,e:{id:"dfE"},p:{id:"dfP"},c:{id:"dfC"}};
 const ENS=[100,150,200,250,300,360],LEADS=["II","I","III","aVR","aVL","aVF","Piastre"];
 const isDae=()=>maxLv()===1||(S.dev&&S.dev.aed);
-const DF_OPT=[["PA automatica",()=>S.nibpAuto?S.nibpAuto/60+" min":"spenta",()=>$("#btnNibpAuto").click()],["Metronomo RCP",()=>S.dev.metro?"acceso":"spento",()=>{S.dev.metro=!S.dev.metro}],["Allarmi sonori",()=>soundOn?"attivi":"silenziati",()=>$("#btnSound").click()],["Modalità",()=>isDae()?"DAE":"Manuale",()=>{if(maxLv()>1)S.dev.aed=!S.dev.aed}],["Ampiezza ECG",()=>"× "+(S.dev.size||1),()=>dfKey("size")]];
+const DF_OPT0=[["PA automatica",()=>S.nibpAuto?S.nibpAuto/60+" min":"spenta",()=>$("#btnNibpAuto").click()],["Metronomo RCP",()=>S.dev.metro?"acceso":"spento",()=>{S.dev.metro=!S.dev.metro}],["Allarmi sonori",()=>soundOn?"attivi":"silenziati",()=>$("#btnSound").click()],["Modalità",()=>isDae()?"DAE":"Manuale",()=>{if(maxLv()>1)S.dev.aed=!S.dev.aed}],["Ampiezza ECG",()=>"× "+(S.dev.size||1),()=>dfKey("size")]];
+const DF_OPT=[["ECG a 12 derivazioni",()=>S.done.ecg12!=null?"acquisito":"",()=>dfKey("ecg12")],["Trasmetti ECG",()=>S.ecgTx!=null?"inviato "+fmtT(S.ecgTx):"",()=>dfKey("tx")],
+  ["Riepilogo eventi",()=>"",()=>{DF.menu={k:"sum"}}],["Frequenza pacing",()=>S.dev.rate+"/min",()=>{S.dev.rate=S.dev.rate>=120?50:S.dev.rate+10}],
+  ["Pausa pacing",()=>S.dev.pausePace?"in pausa":"no",()=>dfKey("pause")],...DF_OPT0,["Esci dal menu",()=>"",()=>{DF.menu=null}]];
 function dfMenu(){const m=$("#dfMenu");if(!DF.menu){m.hidden=true;return}m.hidden=false;
-  if(DF.menu.k==="opt")m.innerHTML=`<h6>OPZIONI</h6>`+DF_OPT.map((o,i)=>`<div class="mi${i===DF.menu.i?" sel":""}"><span>${o[0]}</span><b>${esc(o[1]())}</b></div>`).join("")+`<small>Selettore ◀ ▶ per scegliere, ● per cambiare. Home per uscire.</small>`;
+  if(DF.menu.k==="opt")m.innerHTML=`<h6>OPZIONI</h6>`+DF_OPT.map((o,i)=>`<div class="mi${i===DF.menu.i?" sel":""}"><span>${o[0]}</span><b>${esc(o[1]())}</b></div>`).join("")+`<small>Manopola: ruota per scegliere, premi per confermare.</small>`;
   else{const ev=S.log.filter(l=>/Scarica|Carica del|Shock|Adrenalina|Amiodarone|compressioni|RCP|ROSC|Pacing|Evento|ECG 12|trasmesso/i.test(l.m)).slice(-14);
-    m.innerHTML=`<h6>RIEPILOGO EVENTI</h6>`+(ev.length?ev.map(l=>`<div class="mi"><span>${fmtT(l.t)}</span><span style="text-align:right">${esc(l.m)}</span></div>`).join(""):`<div class="mi"><span>Nessun evento registrato</span></div>`)+`<small>Home per uscire.</small>`}}
+    m.innerHTML=`<h6>RIEPILOGO EVENTI</h6>`+(ev.length?ev.map(l=>`<div class="mi"><span>${fmtT(l.t)}</span><span style="text-align:right">${esc(l.m)}</span></div>`).join(""):`<div class="mi"><span>Nessun evento registrato</span></div>`)+`<small>Premi la manopola per tornare.</small>`}}
 function dfMode(){if(!S.dev.on)return"SPENTO";if(isDae())return"DAE";if(S.dev.pace)return"PACER";if(S.dev.sync)return"SINCRO";return"MANUALE"}
 function openDefib(){
   if(!S||S.end)return;if(!S.kit.mon){addLog("Il monitor-defibrillatore è ancora sul mezzo: mandalo a prendere.","bad");return}
@@ -2997,6 +3063,7 @@ function openDefib(){
     dfUpdate()});
   $("#dfX").focus();
 }
+window.addEventListener("resize",()=>{if(DF.open){clearTimeout(DF.rz);DF.rz=setTimeout(()=>{closeDefib();openDefib()},200)}});
 function closeDefib(){DF.open=false;DF.menu=null;$("#dfw").hidden=true}
 function dfMsg(t){$("#dfMsg").textContent=t;DF.msgT=performance.now()}
 function dfUpdate(){
@@ -3016,17 +3083,19 @@ function dfUpdate(){
   else if(!S.conn.pads&&!S.conn.ecg)st="COLLEGARE ELETTRODI O PIASTRE";else if(d.lead!=="Piastre"&&!S.conn.ecg)st="DERIVAZIONI SCOLLEGATE";
   if(!DF.msgT||performance.now()-DF.msgT>4000)$("#dfMsg").textContent=st;
   $("#dfPace").textContent=d.pace?`PACER ${d.rate}/min · ${d.ma} mA${d.ma>=60&&S.conn.pads&&!S.arrest?" · CATTURA":""}`:"";
-  const dae=isDae();$("#dfPause").setAttribute("aria-pressed",String(!!d.pausePace));$("#dfCpr").setAttribute("aria-pressed",String(!!d.metro));if(DF.menu)dfMenu();
-  for(const id of ["dfEnD","dfEnU","dfChg","dfSync","dfPacer","dfRateD","dfRateU","dfMaD","dfMaU"])$("#"+id).disabled=!on||dae;
-  $("#dfShock").disabled=!on;$("#dfShock").classList.toggle("ready",!!d.ready);
-  $("#dfSync").setAttribute("aria-pressed",String(d.sync));$("#dfPacer").setAttribute("aria-pressed",String(d.pace));
-  $("#dfPow").setAttribute("aria-pressed",String(on));
+  const dae=isDae();if(DF.menu)dfMenu();
+  const man=new Set(["enU","enD","chg","sync","pacer"]);
+  document.querySelectorAll("#dfw .hk").forEach(b=>{const k=b.dataset.df;if(k==="pow")return;b.disabled=!on||(dae&&man.has(k))});
+  $("#dfShock").classList.toggle("ready",!!d.ready);
+  $("#dfK_sync").setAttribute("aria-pressed",String(!!d.sync));$("#dfK_pacer").setAttribute("aria-pressed",String(!!d.pace));$("#dfK_cpr").setAttribute("aria-pressed",String(!!d.metro));
+  $("#dfK_pow").setAttribute("aria-pressed",String(on));
   for(const [b,c] of [["dfCEcg","ecg"],["dfCPads","pads"],["dfCSpo2","spo2"],["dfCNibp","nibp"],["dfCCo2","etco2"]]){const el=$("#"+b);el.classList.toggle("on",!!S.conn[c]);el.disabled=!!blocked(c)&&!S.conn[c]}
 }
 function dfKey(k){
   if(!S||S.end)return;const d=S.dev;
-  if(k==="pow"){d.on=!d.on;if(!d.on){d.chg=null;d.ready=false;d.pace=false}addLog(d.on?"Monitor acceso.":"Monitor spento.","sys");dfUpdate();return}
+  if(k==="pow"){DF.menu=null;dfMenu();d.on=!d.on;if(!d.on){d.chg=null;d.ready=false;d.pace=false}addLog(d.on?"Monitor acceso.":"Monitor spento.","sys");dfUpdate();return}
   if(!d.on&&k!=="x"){dfMsg("Il monitor è spento");return}
+  if(k==="dialP"&&DF.menu&&DF.menu.k==="sum"){DF.menu={k:"opt",i:2};dfMenu();return}
   const act=id=>{const w=blocked(id);if(w&&!(id==="rcp")){dfMsg(w==="Già eseguito"?"Già fatto":w);return false}startAction(id);return true};
   switch(k){
     case"enD":case"enU":{const i=ENS.indexOf(d.en);d.en=ENS[clamp(i+(k==="enU"?1:-1),0,ENS.length-1)];if(d.ready||d.chg!=null){d.ready=false;d.chg=null;dfMsg("Energia cambiata: carica annullata")}break}
@@ -3044,7 +3113,7 @@ function dfKey(k){
     case"nibp":act("nibp");break;
     case"ecg12":act("ecg12");break;
     case"lead":d.lead=LEADS[(LEADS.indexOf(d.lead)+1)%LEADS.length];break;
-    case"alarm":$("#btnSound").click();dfMsg(soundOn?"Allarmi sonori attivi":"Allarmi sonori silenziati");break;
+    case"alarm":if(DF.menu){DF.menu=null;dfMenu();break}$("#btnSound").click();dfMsg(soundOn?"Allarmi sonori attivi":"Allarmi sonori silenziati");break;
     case"event":addLog("Evento segnato sul monitor.","sys");S.marks.push({t:S.t,l:"EV"});dfMsg("Evento registrato");break;
     case"print":addLog("Striscia del ritmo stampata.","sys");dfMsg("Stampa in corso…");break;
     case"cEcg":act("ecg");break;case"cPads":act("pads");break;case"cSpo2":act("spo2");break;case"cNibp":act("nibp");break;case"cCo2":act("etco2");break;
@@ -3053,8 +3122,10 @@ function dfKey(k){
     case"opt":DF.menu=DF.menu&&DF.menu.k==="opt"?null:{k:"opt",i:0};dfMenu();break;
     case"sum":DF.menu=DF.menu&&DF.menu.k==="sum"?null:{k:"sum"};dfMenu();break;
     case"home":DF.menu=null;dfMenu();break;
-    case"dialL":case"dialR":if(DF.menu&&DF.menu.k==="opt"){DF.menu.i=(DF.menu.i+(k==="dialR"?1:DF_OPT.length-1))%DF_OPT.length;dfMenu()}break;
+    case"dialL":case"dialR":if(DF.menu&&DF.menu.k==="sum"){DF.menu={k:"opt",i:2};dfMenu();break}if(!DF.menu){DF.menu={k:"opt",i:0};dfMenu();break}if(DF.menu&&DF.menu.k==="opt"){DF.menu.i=(DF.menu.i+(k==="dialR"?1:DF_OPT.length-1))%DF_OPT.length;dfMenu()}break;
     case"dialP":if(DF.menu&&DF.menu.k==="opt"){DF_OPT[DF.menu.i][2]();dfMenu()}else{DF.menu={k:"opt",i:0};dfMenu()}break;
+    case"up":case"down":if(DF.menu&&DF.menu.k==="opt"){DF.menu.i=(DF.menu.i+(k==="down"?1:DF_OPT.length-1))%DF_OPT.length;dfMenu()}
+      else if(d.pace){d.ma=clamp(d.ma+(k==="up"?10:-10),0,200);dfMsg("Corrente pacing "+d.ma+" mA")}else dfMsg("▲▼: corrente del pacer · menu con la manopola");break;
     case"pause":if(!d.pace){dfMsg("Pacer non attivo");break}d.pausePace=!d.pausePace;dfMsg(d.pausePace?"Pacing in pausa":"Pacing ripreso");break;
     case"tx":if(S.done.ecg12==null){dfMsg("Acquisisci prima l’ECG 12");break}addLog("ECG a 12 derivazioni trasmesso alla centrale operativa.","sys");S.ecgTx=S.t;dfMsg("Trasmissione completata");break;
     case"x":closeDefib();return;
