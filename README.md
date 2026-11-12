@@ -4,9 +4,9 @@ Simulatore didattico di emergenze pre-ospedaliere e intra-ospedaliere per soccor
 
 **Usalo dal browser:** https://titan-code-sm.github.io/Emergency-Sim/
 
-**App da installare:** nella sezione [Releases](https://github.com/titan-code-sm/Emergency-Sim/releases)
-- `CodiceRossoSim-Setup.exe` per Windows (se compare "Windows ha protetto il PC": *Ulteriori informazioni* › *Esegui comunque*)
-- `CodiceRossoSim.apk` per Android (consenti l'installazione da origini sconosciute)
+**App da installare:**
+- Windows: https://titan-code-sm.github.io/Emergency-Sim/download/CodiceRossoSim-Setup.exe (se compare "Windows ha protetto il PC": *Ulteriori informazioni* › *Esegui comunque*)
+- Android: https://titan-code-sm.github.io/Emergency-Sim/download/CodiceRossoSim.apk (consenti l'installazione da origini sconosciute)
 
 ## Cosa contiene
 - 5 scenari: anafilassi, arresto in fibrillazione ventricolare, ipoglicemia, STEMI, trauma con emorragia
