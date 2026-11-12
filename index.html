@@ -3400,7 +3400,7 @@ window.__appBack=()=>{
   show("home");return true};
 window.__appPause=()=>{if(S&&!S.end&&S.run&&!$("#sim").hidden){S.run=false;$("#btnPause").textContent="Riprendi";updateUI(true)}stopVoice()};
 if(/github\.io$/.test(location.hostname))$("#dlBox").hidden=false;
-if(APP){document.querySelector(".remote-box").hidden=true;$("#insRemote").hidden=true;document.documentElement.classList.add("app")}
+if(APP){$("#remForm").closest(".remote-box").hidden=true;$("#insRemote").hidden=true;document.documentElement.classList.add("app")}
 
 /* ---------- AVVIO ---------- */
 readCss();
