@@ -573,6 +573,8 @@ html.mobon:not(.mobport) .mob-dock svg{width:18px;height:18px}
       <li><b>Rivedi</b><span>Debriefing con azioni critiche, errori, grafico dei parametri e scheda di intervento.</span></li>
     </ol>
   </section>
+  <section class="remote-box" id="dlBox" hidden aria-label="Scarica l’app"><h2>Scarica l’app</h2><p class="muted" style="margin:0">Funziona anche senza connessione.</p>
+    <div style="display:flex;gap:8px;flex-wrap:wrap"><a class="btn" href="download/CodiceRossoSim-Setup.exe">Windows (.exe)</a><a class="btn" href="download/CodiceRossoSim.apk">Android (.apk)</a></div></section>
   <section class="remote-box" aria-label="Istruttore remoto"><h2>Sei l’istruttore?</h2><p class="muted" style="margin:0">Lo studente apre il pannello istruttore durante la simulazione e ti legge il codice di 4 cifre. Da qui vedi i parametri in diretta e comandi gli eventi da un secondo dispositivo.</p>
     <form id="remForm"><input id="remCode" inputmode="numeric" maxlength="4" placeholder="0000" aria-label="Codice della sessione"><button class="btn" type="submit">Collegati come istruttore</button></form></section>
   <p class="disc">Strumento a scopo formativo. Dosi e algoritmi seguono le linee guida ERC 2021 in forma semplificata: verifica sempre con i protocolli in vigore nel tuo servizio.</p>
@@ -3397,6 +3399,7 @@ window.__appBack=()=>{
   if(S&&!S.end&&!$("#sim").hidden){S.run=false;$("#btnPause").textContent="Riprendi"}
   show("home");return true};
 window.__appPause=()=>{if(S&&!S.end&&S.run&&!$("#sim").hidden){S.run=false;$("#btnPause").textContent="Riprendi";updateUI(true)}stopVoice()};
+if(/github\.io$/.test(location.hostname))$("#dlBox").hidden=false;
 if(APP){document.querySelector(".remote-box").hidden=true;$("#insRemote").hidden=true;document.documentElement.classList.add("app")}
 
 /* ---------- AVVIO ---------- */
